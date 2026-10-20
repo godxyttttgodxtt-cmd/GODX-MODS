@@ -1,24 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#090909">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GODX MODS — Gaming Hub</title>
-<meta name="description" content="GODX MODS gaming resources and authorized downloads.">
+<meta name="description" content="GODX MODS gaming downloads hub">
 <style>
-:root{--red:#ff2638;--bg:#090909;--panel:#151515;--line:#303030;--muted:#aaa}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#28070c,var(--bg) 48%);color:#f7f7f7;font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif}.wrap{width:min(1120px,92%);margin:auto}header{position:sticky;top:0;z-index:3;background:#090909ed;border-bottom:1px solid #3c171b;backdrop-filter:blur(9px)}.nav{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:17px 0}.brand{font-weight:1000;letter-spacing:1px;font-size:1.25rem}.brand span{color:var(--red)}.btn{display:inline-flex;justify-content:center;align-items:center;background:var(--red);color:#fff;padding:11px 15px;border-radius:9px;font-weight:850;border:0;cursor:pointer;text-decoration:none}.hero{text-align:center;padding:64px 0 36px}.badge,.tag{display:inline-block;border:1px solid #63212a;color:#ff9aa3;background:#260b10;border-radius:7px;padding:5px 8px;font-size:.72rem;font-weight:850;letter-spacing:.6px}h1{font-size:clamp(2.4rem,7vw,4.7rem);line-height:1;margin:18px 0;letter-spacing:-2px}h1 span{color:var(--red)}.hero p{max-width:640px;margin:0 auto 23px;color:#bbb;line-height:1.7}.search{display:flex;gap:9px;max-width:620px;margin:auto}input{min-width:0;flex:1;background:#151515;color:white;border:1px solid #383838;border-radius:9px;padding:13px 14px;font:inherit}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:28px 0 18px}.section-head h2{margin:0}.section-head p{margin:6px 0 0;color:#aaa;font-size:.9rem}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;padding-bottom:35px}.card{background:linear-gradient(145deg,#191919,#101010);border:1px solid var(--line);border-radius:15px;overflow:hidden}.cover{height:125px;display:grid;place-items:center;font-size:2.8rem;background:linear-gradient(135deg,#390a11,#161616 65%,#29090e);border-bottom:2px solid #70202a}.body{padding:16px}.body h3{margin:11px 0 7px}.body p{color:#aaa;line-height:1.55;font-size:.9rem;min-height:44px;margin:0 0 15px;overflow-wrap:anywhere}.download{display:block;text-align:center;background:#262626;border:1px solid #444;border-radius:8px;padding:11px;font-weight:850}.download:hover{background:var(--red)}.empty{display:none;grid-column:1/-1;text-align:center;padding:25px;border:1px dashed #444;border-radius:10px;color:#aaa}.notice{margin:0 0 35px;padding:15px;border:1px solid #4a252a;border-radius:10px;background:#190d0f;color:#d8c1c4;font-size:.88rem;line-height:1.6}footer{border-top:1px solid #292929;color:#888;text-align:center;padding:24px 0 35px;font-size:.85rem}@media(max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding-top:46px}}@media(max-width:500px){.grid{grid-template-columns:1fr}.search{flex-direction:column}.section-head{align-items:start;flex-direction:column}}
-</style></head><body>
-<header><div class="wrap nav"><a class="brand" href="#"><span>GODX</span> MODS</a><small style="color:#aaa">GAMING DOWNLOAD HUB</small><a class="btn" href="#games">Explore</a></div></header>
-<main class="wrap"><section class="hero"><span class="badge">⚡ BLACK + RED PRO GAMING</span><h1>GODX <span>MODS</span></h1><p>Gaming resources, game add-ons, and downloads from sources you trust. Search the collection below.</p><div class="search"><input id="search" type="search" placeholder="Search games and resources..." aria-label="Search games"><button class="btn" id="searchBtn">Search</button></div></section>
-<section id="games"><div class="section-head"><div><h2>🔥 Featured Collection</h2><p>Items published by the site owner.</p></div><span class="tag">GODX COLLECTION</span></div><div class="grid" id="grid"><div class="empty" id="empty">No items published yet.</div></div></section>
-<aside class="notice"><strong>Safety note:</strong> Only distribute files you own or are authorized to share. Review files before publishing and use clear descriptions and trusted download links.</aside></main>
-<footer><div class="wrap">© <span id="year"></span> GODX MODS · Made for gamers ❤️‍🔥</div></footer>
+:root{--red:#ff2638;--bg:#090909;--panel:#151515;--muted:#b8b8b8;--line:#303030}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at top,#351016 0,#111 42%,#080808 100%);color:#f7f7f7;font-family:Arial,Helvetica,sans-serif;min-height:100vh}
+a{color:inherit}
+.wrap{width:min(1100px,92%);margin:auto}
+header{border-bottom:1px solid #3a2023;background:#090909eF;position:sticky;top:0;z-index:5;backdrop-filter:blur(10px)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0}
+.brand{font-weight:900;font-size:clamp(22px,4vw,32px);letter-spacing:1px;color:#fff;text-decoration:none}
+.brand span{color:var(--red)}
+.badge{font-size:12px;color:#ffb5bc;border:1px solid #64232c;border-radius:999px;padding:7px 10px}
+.hero{padding:42px 0 24px}
+.kicker{color:#ff7783;font-weight:800;text-transform:uppercase;letter-spacing:3px;font-size:12px}
+h1{font-size:clamp(32px,6vw,54px);line-height:1.05;margin:12px 0}
+h1 span{color:var(--red)}
+.hero p{color:#c8c8c8;line-height:1.6;max-width:620px}
+.searchrow{display:flex;gap:10px;margin:22px 0 10px;flex-wrap:wrap}
+input,select{background:#101010;color:white;border:1px solid #414141;border-radius:12px;padding:14px 15px;font-size:16px;min-width:0}
+#search{flex:1;width:220px}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--red);color:white;text-decoration:none;border:0;border-radius:10px;padding:12px 16px;font-weight:800;cursor:pointer}
+.btn:hover{filter:brightness(1.12)}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:28px 0 16px}
+.section-head h2{margin:0;font-size:24px}
+.section-head p{margin:5px 0 0;color:var(--muted);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,245px),1fr));gap:18px;padding-bottom:38px}
+.card{overflow:hidden;background:linear-gradient(145deg,#191919,#101010);border:1px solid #3a3031;border-radius:18px;box-shadow:0 12px 35px #0007}
+.card-img{height:170px;position:relative;background:linear-gradient(135deg,#3c1018,#151515);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.card-img img{width:100%;height:100%;object-fit:cover;display:block}
+.card-img .fallback{font-size:58px;filter:drop-shadow(0 8px 12px #000)}
+.category{position:absolute;left:12px;top:12px;background:#090909d9;border:1px solid #ffffff26;border-radius:999px;padding:6px 9px;font-size:11px;font-weight:800}
+.card-body{padding:16px}
+.card h3{margin:0 0 9px;font-size:19px}
+.card p{color:#c3c3c3;font-size:14px;line-height:1.55;min-height:44px;margin:0 0 15px;overflow-wrap:anywhere}
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.small{font-size:12px;color:#aaa}
+.notice{border:1px solid #4c282d;background:#1b1012;border-radius:14px;padding:14px 16px;color:#e6cdd0;font-size:13px;line-height:1.6;margin:8px 0 30px}
+footer{border-top:1px solid #292929;color:#999;padding:22px 0 35px;font-size:13px}
+.empty{color:#bbb;padding:20px 0}
+@media(max-width:520px){.nav{padding:14px 0}.badge{font-size:10px}.hero{padding-top:30px}.card-img{height:155px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="#"><span>GODX</span> MODS</a>
+<div class="badge">GAMING DOWNLOAD HUB</div>
+</div></header>
+<main class="wrap">
+<section class="hero">
+<div class="kicker">Your gaming corner</div>
+<h1>Discover your next <span>MOD</span></h1>
+<p>Browse gaming resources and downloads shared by GODX MODS. Check each item's details before downloading.</p>
+<div class="searchrow">
+<input id="search" type="search" placeholder="Search mods and games..." aria-label="Search mods">
+<select id="category" aria-label="Filter category"><option value="">All categories</option><option>Android</option><option>Free Fire</option><option>Minecraft</option><option>Racing & Simulator</option><option>Other</option></select>
+</div>
+</section>
+<section>
+<div class="section-head"><div><h2>Latest uploads</h2><p id="count">Browse available items</p></div></div>
+<div id="games" class="grid"></div>
+<div id="empty" class="empty" hidden>No items match your search.</div>
+</section>
+<aside class="notice"><strong>Safety note:</strong> Downloads open on their source website. Only download files you trust and have permission to share.</aside>
+</main>
+<footer><div class="wrap">© <span id="year"></span> GODX MODS · Gaming Hub</div></footer>
 <script>
-const KEY='godx_mods_published_v1';const seed=[
-{id:'sample-1',name:'Free Fire Resources',category:'Battle Royale',icon:'🎯',description:'Game guides, settings tips, and community resources.',url:'https://ff.garena.com/'},
-{id:'sample-2',name:'Minecraft Add-ons',category:'Sandbox',icon:'🧱',description:'Official game information and community content.',url:'https://www.minecraft.net/'},
-{id:'sample-3',name:'Racing & Simulator',category:'Racing',icon:'🏎️',description:'Game tips and authorized download links.',url:'https://play.google.com/store'}];
-function read(){try{const d=JSON.parse(localStorage.getItem(KEY));return Array.isArray(d)?d:seed}catch{return seed}}
-function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function render(){const data=read(),q=document.getElementById('search').value.trim().toLowerCase(),grid=document.getElementById('grid');const found=data.filter(m=>(m.name+' '+m.category+' '+m.description).toLowerCase().includes(q));grid.innerHTML=found.map(m=>`<article class="card"><div class="cover">${esc(m.icon||'🎮')}</div><div class="body"><span class="tag">${esc(m.category||'Other')}</span><h3>${esc(m.name)}</h3><p>${esc(m.description)}</p><a class="download" href="${esc(m.url)}" target="_blank" rel="noopener noreferrer">Open / Download ↗</a></div></article>`).join('')+(!found.length?'<div class="empty" style="display:block">No matching items found.</div>':'')}
-document.getElementById('search').addEventListener('input',render);document.getElementById('searchBtn').addEventListener('click',render);document.getElementById('year').textContent=new Date().getFullYear();render();
-</script></body></html>
+const items = [
+  {
+    id: "al-39180-mod",
+    name: "AL_39180 MOD",
+    category: "Android",
+    emoji: "🎮",
+    description: "AL_39180 MOD file hosted on MediaFire.",
+    image: "",
+    url: "https://www.mediafire.com/file/f6u4z63q7j9xbu0/AL_39180+MOD.7z/file"
+  },
+  {
+    id: "sample-1",
+    name: "Free Fire Resources",
+    category: "Free Fire",
+    emoji: "🎯",
+    description: "Add your official resource or download link here.",
+    image: "",
+    url: ""
+  },
+  {
+    id: "sample-2",
+    name: "Minecraft Add-ons",
+    category: "Minecraft",
+    emoji: "⛏️",
+    description: "Add your official add-on or download link here.",
+    image: "",
+    url: ""
+  },
+  {
+    id: "sample-3",
+    name: "Racing & Simulator",
+    category: "Racing & Simulator",
+    emoji: "🏎️",
+    description: "Add your game resource or download link here.",
+    image: "",
+    url: ""
+  }
+];
+
+const games = document.getElementById("games");
+const search = document.getElementById("search");
+const category = document.getElementById("category");
+const empty = document.getElementById("empty");
+const count = document.getElementById("count");
+
+function safeUrl(value) {
+  try {
+    const u = new URL(value);
+    return ["https:", "http:"].includes(u.protocol) ? u.href : "";
+  } catch { return ""; }
+}
+function render() {
+  const q = search.value.trim().toLowerCase();
+  const c = category.value;
+  const filtered = items.filter(item =>
+    (!c || item.category === c) &&
+    [item.name, item.category, item.description].join(" ").toLowerCase().includes(q)
+  );
+  games.innerHTML = "";
+  filtered.forEach(item => {
+    const card = document.createElement("article");
+    card.className = "card";
+    const media = document.createElement("div");
+    media.className = "card-img";
+    const imgUrl = safeUrl(item.image);
+    if (imgUrl) {
+      const img = document.createElement("img");
+      img.src = imgUrl;
+      img.alt = item.name + " image";
+      img.loading = "lazy";
+      img.onerror = () => { media.innerHTML = '<div class="fallback">' + item.emoji + '</div>'; };
+      media.appendChild(img);
+    } else {
+      const fallback = document.createElement("div");
+      fallback.className = "fallback";
+      fallback.textContent = item.emoji || "🎮";
+      media.appendChild(fallback);
+    }
+    const tag = document.createElement("span");
+    tag.className = "category";
+    tag.textContent = item.category;
+    media.appendChild(tag);
+    const body = document.createElement("div");
+    body.className = "card-body";
+    const title = document.createElement("h3");
+    title.textContent = item.name;
+    const desc = document.createElement("p");
+    desc.textContent = item.description;
+    const foot = document.createElement("div");
+    foot.className = "card-foot";
+    const small = document.createElement("span");
+    small.className = "small";
+    small.textContent = "GODX MODS";
+    foot.appendChild(small);
+    const url = safeUrl(item.url);
+    if (url) {
+      const btn = document.createElement("a");
+      btn.className = "btn";
+      btn.href = url;
+      btn.target = "_blank";
+      btn.rel = "noopener noreferrer";
+      btn.textContent = "Download ↗";
+      foot.appendChild(btn);
+    } else {
+      const label = document.createElement("span");
+      label.className = "small";
+      label.textContent = "Link coming soon";
+      foot.appendChild(label);
+    }
+    body.append(title, desc, foot);
+    card.append(media, body);
+    games.appendChild(card);
+  });
+  empty.hidden = filtered.length !== 0;
+  count.textContent = filtered.length + (filtered.length === 1 ? " item" : " items");
+}
+search.addEventListener("input", render);
+category.addEventListener("change", render);
+document.getElementById("year").textContent = new Date().getFullYear();
+render();
+</script>
+</body>
+</html>
